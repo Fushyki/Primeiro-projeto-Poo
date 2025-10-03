@@ -1,0 +1,12 @@
+nome;preco;volume;temperatura;tipo;quantidade
+Cerveja Heineken;7.5;600;Gelada;Alcoolica;20
+Refrigerante Coca-Cola;5.0;350;Ambiente;NaoAlcoolica;50
+Vinho Tinto;35.0;750;Ambiente;Alcoolica;10
+Skol Beats;8.0;600;Gelada;Alcoolica;20
+Refrigerante Pespsi;5.0;350;Gelada;NaoAlcoolica;50
+Café Starbucks;12.5;500;Ambiente;NaoAlcoolica;15
+Agua Mineral (Com Gás);3.0;500;Gelada;NaoAlcoolica;50
+Agua Mineral;3.0;500;Gelada;NaoAlcoolica;100
+agua;2.0;500;Gelada;NaoAlcoolica;100
+whisky do neymar;10000.0;1000;Ambiente;Alcoolica;100
+Gim da Marina;1000000.0;250;Gelada;Alcoolica;1

@@ -1,0 +1,55 @@
+1. Princípio de Encapsulamento
+Implementação: O princípio foi aplicado em todas as classes do projeto. Os atributos (variáveis de instância) são declarados como private ou protected, restringindo o acesso direto. A manipulação desses dados é realizada de forma controlada através de métodos públicos (ex: getNome(), getPreco()), garantindo a integridade dos objetos.
+Localização: Exemplificado nas classes Produto.java, Cliente.java, BebidaAlcoolica.java, entre outras.
+
+2. Mínimo de 5 Classes
+Implementação: O projeto excede o requisito mínimo, sendo composto por um total de 7 classes distintas, cada uma com sua responsabilidade definida.
+Localização: Produto, BebidaAlcoolica, BebidaNaoAlcoolica, Cliente, LojaDeBebidas, Main e EstoqueInsuficienteException.
+3. Classe Abstrata
+Implementação: Uma classe abstrata foi utilizada para definir um modelo comum e generalizado para todos os produtos.
+Localização: A classe Produto.java é declarada como public abstract class Produto.
+
+4. Método Abstrato
+Implementação: Um método abstrato foi definido para forçar que todas as subclasses concretas implementem um comportamento essencial, garantindo a coesão do modelo.
+Localização: O método public abstract void exibirInfo(); na classe Produto.java.
+
+5. Mínimo de 10 Atributos e 10 Métodos
+Implementação: O projeto cumpre ambos os critérios. A contagem total de métodos excede 20, e o número de atributos de classe, após as implementações em Cliente.java (id e dataCadastro), ultrapassa os 10 solicitados.
+
+6. Duas Relações de Herança
+Implementação: O conceito de herança foi aplicado para criar especializações da classe base Produto.
+Localização: As classes BebidaAlcoolica.java e BebidaNaoAlcoolica.java herdam de Produto através da palavra-chave extends.
+
+7. Método Sobrescrito (Não Abstrato)
+Implementação: Um método herdado de uma superclasse (Object) foi sobrescrito para fornecer uma representação textual personalizada do objeto, cumprindo a regra de não ser a implementação de um método abstrato.
+Localização: O método @Override public String toString() na classe Cliente.java.
+
+8. Chamada Polimórfica
+Implementação: O polimorfismo é demonstrado quando um método é chamado a partir de uma referência da superclasse, mas a execução ocorre na subclasse correspondente em tempo de execução.
+Localização: Na classe LojaDeBebidas.java, dentro do método listarBebidas, a linha listaFiltrada.get(i).exibirInfo() invoca o método específico de BebidaAlcoolica ou BebidaNaoAlcoolica, dependendo do objeto contido na lista.
+
+9. Relação de Associação
+Implementação: O projeto modela a relação "tem-um" (has-a), onde uma classe contém referências a objetos de outra classe como parte de seu estado.
+Localização: A classe LojaDeBebidas.java possui atributos (catalogo e quantidadesEstoque) que são coleções de objetos Produto, caracterizando uma associação.
+
+10. Coleção de Objetos
+Implementação: Estruturas de dados para armazenar grupos de objetos foram utilizadas para gerenciar o catálogo, o estoque e o carrinho de compras.
+Localização: Uso proeminente de ArrayList e Map nas classes LojaDeBebidas.java e Main.java.
+
+11.Exceções 
+Implementação: Foi criada uma classe de exceção checada (checked exception) para lidar com um erro de regra de negócio específico: a tentativa de venda de um produto com estoque insuficiente.
+
+Criação: EstoqueInsuficienteException.java herda de Exception.
+
+Lançamento (throw): No método verificarDisponibilidade da classe LojaDeBebidas.
+
+Captura (try-catch): No case 2 do switch dentro da classe Main.java, tratando o erro de forma controlada e informando o usuário.
+
+Só para não perder...
+private void carregarProdutos() {
+        adicionarProdutoAoEstoque(new BebidaAlcoolica("Cerveja", 5.99, 350, "Gelada"), 50);
+        adicionarProdutoAoEstoque(new BebidaAlcoolica("Vinho", 29.99, 750, "Ambiente"), 20);
+        adicionarProdutoAoEstoque(new BebidaAlcoolica("Vodka", 19.99, 500, "Gelada"), 30);
+        adicionarProdutoAoEstoque(new BebidaNaoAlcoolica("Refrigerante", 4.50, 600, "Gelada"), 100);
+        adicionarProdutoAoEstoque(new BebidaNaoAlcoolica("Água", 2.50, 500, "Gelada"), 150);
+        adicionarProdutoAoEstoque(new BebidaNaoAlcoolica("Suco Natural", 6.00, 300, "Ambiente"), 40);
